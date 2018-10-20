@@ -19,7 +19,7 @@ I hope to use the chromecast developer who have the mind like the same of me.
     1. install [heroku cli](https://devcenter.heroku.com/articles/heroku-cli).
 1. create [Slack webhook url](https://api.slack.com/incoming-webhooks).
 
-### step of use
+### Step of use
 1. clone this repository.
 1. `cd cast-sdk-update-notifier`
 1. `heroku login`
@@ -41,4 +41,11 @@ I hope to use the chromecast developer who have the mind like the same of me.
      `heroku addons:add scheduler:standard`
 1. `heroku addons:open scheduler`
 1. click `Add new job` on the Browser 
-1. set Job like following:
+1. set Job like following: (require to input $`notify`)
+![image](https://user-images.githubusercontent.com/5774588/47251831-b4d5b780-d474-11e8-9cab-0611010bfb6b.png)
+
+
+### Goal
+
+If it updated Google Cast SDK, you will get the following message.
+![image](https://user-images.githubusercontent.com/5774588/47251848-1e55c600-d475-11e8-9eae-344e8e2fe9a4.png)
