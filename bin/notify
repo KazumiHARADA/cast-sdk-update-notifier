@@ -1,0 +1,25 @@
+#!/usr/bin/env node
+
+const client = require('cheerio-httpcli');
+const util = require('../util/Utility');
+
+function sendSlackForUpdate() {
+
+    if (typeof process.env.WEBHOOK_URL === "undefined") {
+        console.log("Please set config the WEBHOOK_URL. you should input your console `heroku config:set WEBHOOK_URL=[webhook url of your slack channel]`")
+        return;
+    }
+    util.sendSlackMessage(util.sendSlackMessage, process.env.WEBHOOK_URL);
+}
+
+client.fetch(util.releaseNoteUrl, {}, function (err, $, res) {
+    const today = util.getEnglishDate();
+    $('h3').each(function (idx) {
+        let result = $(this).text().match(/.+\ [0-9]+,\ [0-9]+/);
+        if (result != null) {
+            if (result[0] == today) {
+                sendSlackForUpdate();
+            }
+        }
+    });
+});

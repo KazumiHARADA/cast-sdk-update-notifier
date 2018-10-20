@@ -1,0 +1,15 @@
+{
+  "name": "cast-sdk-update-notifier",
+  "version": "1.0.0",
+  "description": "*cast-sdk-update-notifier* is the most simple notification of updating Cast SDK by Google at Slack.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Kazumi HARADA",
+  "license": "ISC",
+  "dependencies": {
+    "cheerio-httpcli": "^0.7.3",
+    "url": "^0.11.0"
+  }
+}

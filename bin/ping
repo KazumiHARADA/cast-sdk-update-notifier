@@ -1,0 +1,9 @@
+#!/usr/bin/env node
+const util = require('../util/Utility');
+
+if (typeof process.env.WEBHOOK_URL === "undefined") {
+    console.log("Please set config the WEBHOOK_URL. you should input your console `heroku config:set WEBHOOK_URL=[webhook url of your slack channel]`")
+    return;
+}
+
+util.sendSlackMessage(util.testMessage, process.env.WEBHOOK_URL);
